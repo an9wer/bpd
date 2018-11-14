@@ -10,10 +10,8 @@ USER root:root
 RUN pacman -Syu --noconfirm
 RUN pacman -S --needed --noconfirm git python libsodium
 
-WORKDIR /root
+WORKDIR /app
 RUN git clone -b master https://github.com/shadowsocks/shadowsocks.git
 
-WORKDIR /root/shadowsocks
-COPY --chown=root:root config.json .
-
+WORKDIR /app/shadowsocks
 CMD ["python", "-m", "shadowsocks.server", "-c", "config.json"]
