@@ -1,14 +1,14 @@
-FROM base/archlinux
+FROM alpine
 
 LABEL maintainer.name="an9wer"
 LABEL maintainer.email="an9wer@gmail.com"
 
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/sh", "-c"]
 
 USER root:root
 
-RUN pacman -Syu --noconfirm
-RUN pacman -S --needed --noconfirm git python libsodium
+RUN apk update && apk upgrade
+RUN apk add --no-cache git python libsodium
 
 WORKDIR /app
 RUN git clone -b master https://github.com/shadowsocks/shadowsocks.git
