@@ -16,7 +16,10 @@ And then execute the following commands in order to deploy shadowsocks:
 
     sudo docker run -d --network host --name shadowsocks_container --mount type=bind,source="$(pwd)"/config.json,target=/app/shadowsocks/config.json,readonly shadowsocks_image
 
-Everytime you re-configure the file `config.json`, just restart docker
+**Note**: If want container to restart automatically, you should add `--restart
+unless-stopped` option while running the `docker run` command.
+
+Every time you re-configure the file `config.json`, just restart docker
 container as follows:
 
     sudo docker restart shadowsocks_container
