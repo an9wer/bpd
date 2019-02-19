@@ -1,0 +1,21 @@
+{
+    "localaddr": "127.0.0.1:1081",
+    "remoteaddr": "0.0.0.0:8388",
+    "key": "******",
+    "crypt": "salsa20",
+    "mode": "fast2",
+    "mtu": 1350,
+    "sndwnd": 2048,
+    "rcvwnd": 2048,
+    "datashard": 70,
+    "parityshard": 30,
+    "dscp": 46,
+    "nocomp": false,
+    "acknodelay": false,
+    "nodelay": 0,
+    "interval": 40,
+    "resend": 0,
+    "nc": 0,
+    "sockbuf": 4194304,
+    "log": "/app/kcptun/client.log"
+}

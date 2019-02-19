@@ -8,7 +8,7 @@ SHELL ["/bin/sh", "-c"]
 USER root:root
 
 RUN apk update && apk upgrade
-RUN apk add --no-cache git python libsodium
+RUN apk add --no-cache libsodium git python
 
 WORKDIR /app
 RUN git clone -b master https://github.com/shadowsocks/shadowsocks.git
