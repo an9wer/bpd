@@ -19,5 +19,5 @@ USER root:root
 COPY --from=builder /root/go/bin /bin
 
 WORKDIR /app/kcptun
-#CMD ["go", "run", "github.com/xtaci/kcptun/server", "-c", "config.json"]
 CMD ["server", "-c", "server.json"]
+

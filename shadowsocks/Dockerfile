@@ -15,3 +15,4 @@ RUN git clone -b master https://github.com/shadowsocks/shadowsocks.git
 
 WORKDIR /app/shadowsocks
 CMD ["python", "-m", "shadowsocks.server", "-c", "config.json"]
+

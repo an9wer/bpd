@@ -36,4 +36,5 @@ $(LOG):
 	touch $(LOG)
 
 $(CONFIG):
-	cp $(CONFIG){.example,}
+	cp $(CONFIG).example $(CONFIG)
+

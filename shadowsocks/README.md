@@ -1,28 +1,32 @@
-# SSD
-
-SSD, which means shadowsocks docker, is a project intended to deploy
-shadowsocks quickly and easily.
-
 ## Usage
 
-First, create a file named with `config.json`, which is a configuration file of
-shadowsocks (see [basic configuration][0] and [multiple user configuration][1]
-about how to configure it, you can also find an example in
+First, create a file named with `config.json`, which is a configuration file
+used by shadowsocks (see [basic configuration][0] and [multiple user
+configuration][1] about how, you can also find an example in
 `config.json.example`).
 
-And then execute the following commands in order to deploy shadowsocks:
+Then use the following command to deploy shadowsocks:
 
-    sudo docker build -t shadowsocks_image .
+1.  Build a docker image of shadowsocks:
 
-    sudo docker run -d --network host --name shadowsocks_container --mount type=bind,source="$(pwd)"/config.json,target=/app/shadowsocks/config.json,readonly shadowsocks_image
+        sudo make
 
-**Note**: If want container to restart automatically, you should add the option
-`--restart unless-stopped` while running the command `docker run`.
+2.  After building, create a docker container of that:
 
-Every time re-configure the file `config.json`, you need to restart docker
+        sudo make run
+
+That's all.
+
+Every time change the content of `config.json`, you need to restart docker
 container as follows:
 
-    sudo docker restart shadowsocks_container
+    sudo make restart
+
+**Note**: The commands above will by default create a image named with
+`shadowsocks_image` and a container whose name is `shadowsocks_container`
+seperately. If need to change these names, add `IMAGE={name}` and
+`CONTAINER={name}` arguments when running the commands above.
 
 [0]: https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File
 [1]: https://github.com/shadowsocks/shadowsocks/wiki/Configure-Multiple-Users
+
