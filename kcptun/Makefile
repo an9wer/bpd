@@ -43,5 +43,8 @@ $(CONFIG):
 	cp $(CONFIG).example $(CONFIG)
 
 check_target:
-	@if [ $(target) != server -a $(target) != client ]; then exit 1; fi
+	@if [ $(target) != server -a $(target) != client ]; then \
+		echo "Makefile variable 'target' can only be set to server or client."; \
+		exit 1; \
+	fi
 
