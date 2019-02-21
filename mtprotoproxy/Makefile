@@ -1,6 +1,5 @@
 IMAGE = mtprotoproxy_image
 CONTAINER = mtprotoproxy_container
-LOG = shadowsocks.log
 CONFIG = config.py
 
 DOCKER := docker
@@ -11,7 +10,7 @@ JOURNALCTL := journalctl
 build: Dockerfile
 	$(DOCKER) build -t $(IMAGE) .
 
-run: $(LOG) $(CONFIG)
+run: $(CONFIG)
 	$(DOCKER) run -d \
 		--name $(CONTAINER) \
 		--network host \
@@ -30,9 +29,6 @@ clean:
 	-$(DOCKER) stop $(CONTAINER)
 	-$(DOCKER) rm   $(CONTAINER)
 	-$(DOCKER) image rm $(IMAGE)
-
-$(LOG):
-	touch $(LOG)
 
 $(CONFIG):
 	cp $(CONFIG).example $(CONFIG)

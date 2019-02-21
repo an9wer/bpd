@@ -15,9 +15,7 @@ Then run the follwoing commands to deploy kcptun server:
 
         sudo make run
 
-That's all.
-
-Every time change the content of `server.json`, you need to restart docker
+Every time when change the content of `server.json`, you need to restart docker
 container as follows:
 
     sudo make restart
@@ -42,9 +40,7 @@ Then run the follwoing commands to deploy kcptun client:
 
         sudo make target=client run
 
-That's all.
-
-Every time change the content of `client.json`, you need to restart docker
+Every time when change the content of `client.json`, you need to restart docker
 container as follows:
 
     sudo make target=client restart
