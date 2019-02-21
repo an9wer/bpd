@@ -15,9 +15,7 @@ Then use the following command to deploy shadowsocks:
 
         sudo make run
 
-That's all.
-
-Every time change the content of `config.json`, you need to restart docker
+Every time when change the content of `config.json`, you need to restart docker
 container as follows:
 
     sudo make restart
