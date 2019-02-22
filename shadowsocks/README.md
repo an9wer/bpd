@@ -5,7 +5,7 @@ used by shadowsocks (see [basic configuration][0] and [multiple user
 configuration][1] about how, you can also find an example in
 `config.json.example`).
 
-Then use the following command to deploy shadowsocks:
+Then use the following commands to deploy shadowsocks:
 
 1.  Build a docker image of shadowsocks:
 
@@ -15,14 +15,14 @@ Then use the following command to deploy shadowsocks:
 
         sudo make run
 
-Every time when change the content of `config.json`, you need to restart docker
-container as follows:
+Every time when changing the content of `config.json`, you need to restart
+docker container as follows:
 
     sudo make restart
 
-**Note**: The commands above will by default create a image named with
-`shadowsocks_image` and a container whose name is `shadowsocks_container`
-seperately. If need to change these names, add `IMAGE={name}` and
+**Note**: The commands above by default will create an image named with
+`shadowsocks_image` and a container, whose name is `shadowsocks_container`,
+seperately. If needed to change their names, add `IMAGE={name}` and
 `CONTAINER={name}` arguments when running the commands above.
 
 [0]: https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File
